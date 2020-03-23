@@ -1,0 +1,20 @@
+package dinosaurmanagementsystem;
+
+import java.util.Scanner;
+
+public class DinosaurManagementSystem {
+	public static void main(String[] args) {
+		System.out.println("Welcome to Jurassic Park!");
+		Scanner dn = new Scanner(System.in);
+		Scanner cn = new Scanner(System.in);
+		System.out.println("Select your dinasour:");
+		String Dinasour = dn.nextLine();
+		System.out.printf("You selected %s. \n", Dinasour);
+		System.out.printf("1. Feed to %s. \n", Dinasour);
+		System.out.printf("2. Make quarrel with anotehr dinasours. \n");
+		System.out.printf("3. Administer euthanasia %s \n", Dinasour);
+		System.out.printf("4. Make sleep %s", Dinasour);
+		
+	}
+
+}
