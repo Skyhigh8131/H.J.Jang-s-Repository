@@ -1,4 +1,3 @@
-package dinosaurmanagementsystem;
 
 import java.util.Scanner;
 
@@ -10,7 +9,7 @@ public class DinosaurManagementSystem {
 		System.out.println("Input your ID");
 		Scanner name = new Scanner (System.in);
 		String ID = name.nextLine();
-		System.out.printf("Good day, %s\n", ID);
+		System.out.printf("Good day, Nice meet you! , %s\n", ID);
 		
 		System.out.println("Select your dinasour:");
 		Scanner dn = new Scanner(System.in);
