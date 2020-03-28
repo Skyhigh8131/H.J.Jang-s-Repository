@@ -33,6 +33,11 @@ public class DinosaurManagementSystem {
 			else if (num == 2) {
 				fightDinosaur();
 			}
+			else if (num == 6) {
+				System.out.println("Good bye");
+				break;
+			}
+			
 		}
 	}
 	
