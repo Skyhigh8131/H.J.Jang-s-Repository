@@ -22,7 +22,6 @@ public class MenuManager {
 			System.out.printf("6. Exit. \n");
 			System.out.println("Select one number between 1 ~ 6 ");
 			num = input.nextInt();
-			}
 		    if (num == 1) {
 				dm.feedDinosaur();
 			}
@@ -41,6 +40,7 @@ public class MenuManager {
 			else if (num == 6) {
 				System.out.println("Good bye");
 			}
+		}
 	}
 }
 			
