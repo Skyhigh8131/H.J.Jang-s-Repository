@@ -12,16 +12,20 @@ public class MenuManager {
 		
 		Scanner input = new Scanner(System.in);
 		DinosaurManager dm = new DinosaurManager(input);
-		int num = 6;
+		int num = 5;
 		while (num != 6) {
+			System.out.println("Select one number between 1 ~ 6 ");
+			System.out.println("0. information of your dinosaur");
 			System.out.printf("1. Feed to dinosaur. \n");
 			System.out.printf("2. Make quarrel with anotehr dinasours. \n");
 			System.out.printf("3. Administer euthanasia dinosaur \n");
 			System.out.printf("4. Make sleep dinosaur \n");
 			System.out.printf("5. Raise dinosaurs. \n");
 			System.out.printf("6. Exit. \n");
-			System.out.println("Select one number between 1 ~ 6 ");
 			num = input.nextInt();
+			if (num == 0) {
+				dm.information();
+			}
 		    if (num == 1) {
 				dm.feedDinosaur();
 			}
@@ -43,4 +47,3 @@ public class MenuManager {
 		}
 	}
 }
-			
