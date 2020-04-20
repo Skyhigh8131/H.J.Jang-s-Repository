@@ -1,6 +1,8 @@
+package assignment;
+
 import java.util.Scanner;
 
-public class DinosaurManager {
+public class DinosaurManager extends Dinosaur {
 	
 	Scanner input;
 	DinosaurManager(Scanner input){
@@ -11,9 +13,11 @@ public class DinosaurManager {
 		String[] time = {"Triassic", "Jurassic", "Cretaceous"};
 		String[] preference = {"Carnivor!", "Herbivorous!"};
 		String[] size = {"Big one", "Small one"};
-		
+		Dinosaur dino = new Dinosaur();
 		Scanner input = new Scanner(System.in);
 		String dinosaur = input.nextLine();
+		
+		dino.printYesorNo();
 		
 		switch(dinosaur) {
 		case "T Rex":
@@ -53,6 +57,7 @@ public class DinosaurManager {
 			break;
 		default:
 			System.out.printf("%s is not in this park.\n", dinosaur);
+			break;
 		}
 		
 	}
@@ -61,6 +66,9 @@ public class DinosaurManager {
 		
 		Scanner input = new Scanner (System.in);
 		String dinosaur = input.nextLine();
+		Dinosaur dino = new Dinosaur();	
+		
+		dino.printYesorNo();
 		
 		System.out.printf("Your dinosaur is %s! \n", dinosaur);
 		
@@ -88,19 +96,30 @@ public class DinosaurManager {
 		case ("Driosaurus"):
 			System.out.printf("%s is %s, so %s will be given to %s. \n", dinosaur, preference[1], meal[1], dinosaur);
             break;
+		default:
+			System.out.printf("%s is not in this park.\n", dinosaur);
+			break;
 		}
 		
 	}
 	public static void fightDinosaur() {
+		
 		System.out.println("Select a dinosaur.");
+		
+		Dinosaur dino1 = new Dinosaur();
+		Dinosaur dino2 = new Dinosaur();
 		
 		Scanner d1 = new Scanner (System.in);
 		String dinosaur1 = d1.nextLine();
+		
+		dino1.printYesorNo();
 		
 		System.out.println("Select another dinosaur.");
 		
 		Scanner d2 = new Scanner (System.in);
 		String dinosaur2 = d2.nextLine();
+		
+		dino2.printYesorNo();
 		
 		System.out.printf("%s will fight with %s. \n", dinosaur1, dinosaur2);
 	}
@@ -114,30 +133,45 @@ public class DinosaurManager {
 		System.out.println("Select a dinosaur.");
 		Scanner input = new Scanner (System.in);
 		
+		Dinosaur dino = new Dinosaur();
+		
+		dino.printYesorNo();
 		String[] size = {"Big one", "Small one"};
 	    String dinosaur = input.nextLine();
 	    
 	    switch(dinosaur) {
 	    case ("T Rex"):
 	    	System.out.printf("%s is %s.\n", dinosaur, size[0]);
+	        dino.printYesorNo();
 	        break;
 	    case ("Spinosaurus"):
 	    	System.out.printf("%s is %s.\n", dinosaur, size[0]);
-            break;
+	        dino.printYesorNo();
+	        break;
 	    case ("Stegosaurus"):
 	    	System.out.printf("%s is %s.\n", dinosaur, size[0]);
+	        dino.printYesorNo();
             break;
 	    case ("Velociraptor"):
 	    	System.out.printf("%s is %s.\n", dinosaur, size[1]);
+	        dino.printYesorNo();
 	        break;
 	    case ("Triceratops"):
 	    	System.out.printf("%s is %s.\n", dinosaur, size[0]);
+	        dino.printYesorNo();
+	        break;
 	    case ("Brachiosaurus"):
 	    	System.out.printf("%s is %s.\n", dinosaur, size[0]);
+	        dino.printYesorNo();
 	        break;
 	    case ("Driosaurus"):
 	    	System.out.printf("%s is %s.\n", dinosaur, size[1]);
+	        dino.printYesorNo();
 	        break;
+	    default:
+			System.out.printf("%s is not in this park.\n", dinosaur);
+			dino.printYesorNo();
+			break;
 	    }
 	    System.out.printf("%s will fall asleep. \n", dinosaur);
 	}
