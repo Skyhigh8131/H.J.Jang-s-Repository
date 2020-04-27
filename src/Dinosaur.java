@@ -18,4 +18,10 @@ public class Dinosaur {
 			break;
 		}	
 	}
+	public void NumDinosaur(int x, String y) {
+		System.out.println("Ladis and Gentleman, There is new dinosaurus! They are " + x + y);		
+	}
+	public void NumDinosaur(int x, int y, String z) {
+		System.out.println("There are " + (x - y) + " "+ z);
+	}
 }
