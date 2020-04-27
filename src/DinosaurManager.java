@@ -102,6 +102,12 @@ public class DinosaurManager extends Dinosaur {
 		}
 		
 	}
+	public Scanner getInput() {
+		return input;
+	}
+	public void setInput(Scanner input) {
+		this.input = input;
+	}
 	public static void fightDinosaur() {
 		
 		System.out.println("Select a dinosaur.");
@@ -127,6 +133,34 @@ public class DinosaurManager extends Dinosaur {
 		System.out.println("Select a dinosaur.");
 		Scanner input = new Scanner (System.in);
 		String Dinosaur = input.nextLine();
+		Dinosaur dino = new Dinosaur();
+		
+		System.out.println("How many dinosaurs killed?");
+		int number = input.nextInt();
+		
+		switch(Dinosaur) {
+		case ("T Rex"):
+			dino.NumDinosaur(1, number, Dinosaur);
+		    break;
+		case ("Spinosaurus"):
+			dino.NumDinosaur(1, number, Dinosaur);
+		    break;
+		case("Stegosaurus"):
+			dino.NumDinosaur(4, number, Dinosaur);
+		    break;
+		case("Velociraptor"):
+			dino.NumDinosaur(5, number, Dinosaur);
+		    break;
+		case("Triceratops"):
+			dino.NumDinosaur(6, number, Dinosaur);
+		    break;
+		case("Brachiosaurus"):
+			dino.NumDinosaur(3, number, Dinosaur);
+		    break;
+		case("Driosaurus"):
+			dino.NumDinosaur(12, number, Dinosaur);
+		    break;
+		}
 		System.out.printf("%s has killed by Jurassic Park's guard, safelly. \n", Dinosaur);
 	}
 	public static void Makesleep() {
@@ -180,6 +214,8 @@ public class DinosaurManager extends Dinosaur {
 		Scanner input = new Scanner (System.in);
 		String dinosaur = input.nextLine();
 		System.out.println("How many dinosaurs do you want to raise?");
+		int result;
+		Dinosaur dino = new Dinosaur();
 		
 		int number;
 		Scanner num = new Scanner (System.in);
@@ -202,6 +238,9 @@ public class DinosaurManager extends Dinosaur {
 		else if (number == 0) {
 			System.out.println("Select the number! \n");
 		}
+		
+		result = number;
+		
+		dino.NumDinosaur(result, dinosaur);
 	}
-
 }
