@@ -1,3 +1,5 @@
+package assignment;
+
 import java.util.Scanner;
 
 public class MenuManager {
@@ -12,16 +14,17 @@ public class MenuManager {
 		
 		Scanner input = new Scanner(System.in);
 		DinosaurManager dm = new DinosaurManager(input);
-		int num = 7;
-		while (num != 8) {
-			System.out.println("Select one number between 1 ~ 7.\n");
-			System.out.println("1. Information of your dinosaur\n");
-			System.out.println("2. Feed to dinosaur. \n");
-			System.out.println("3. Make quarrel with anotehr dinasours. \n");
-			System.out.println("4. Administer euthanasia dinosaur \n");
-			System.out.println("5. Make sleep dinosaur \n");
-			System.out.println("6. Raise dinosaurs. \n");
-			System.out.println("7. Exit. \n");
+		int num = 8;
+		while (num != 9) {
+			System.out.println("Select one number between 1 ~ 7.");
+			System.out.println("1. Information of your dinosaur.");
+			System.out.println("2. Feed to dinosaur.");
+			System.out.println("3. Make quarrel with anotehr dinasours. ");
+			System.out.println("4. Administer euthanasia dinosaur.");
+			System.out.println("5. Make sleep dinosaur.");
+			System.out.println("6. Raise dinosaurs.");
+			System.out.println("7. Turn on/off fence");
+			System.out.println("8. Exit.");
 			num = input.nextInt();
 			if (num == 1) {
 				dm.information();
@@ -42,8 +45,25 @@ public class MenuManager {
 				dm.Raisedinosaur();
 			}
 			else if (num == 7) {
+				Control c = new FenceControl();
+				System.out.println("Do yo want to control fence in park?");
+				Scanner sc = new Scanner(System.in);
+				String answer = sc.nextLine();
+				if(answer == "Yes") {
+					c.turnOn();
+					c.printInfo();
+					System.out.println("The fence will be turned on");
+				}
+				else if(answer == "No") {
+					c.turnOff();
+					c.printInfo();
+					System.out.println("The fence will be turned off");
+				}
+			}
+			else if (num == 8) {
 				System.out.println("Good bye.\n");
 			}
 		}
+		
 	}
 }
