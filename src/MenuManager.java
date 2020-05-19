@@ -1,17 +1,25 @@
 package assignment;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MenuManager {
-	
 	public static void main(String[] args) {
-		
 		System.out.println(" *** Jurassic Park Dinosaur management! *** ");
 		System.out.println("Input your ID");
-		Scanner name = new Scanner (System.in);
-		String ID = name.nextLine();
-		System.out.printf("Have a good day, Mr. %s! \n", ID);
-		
+		try {
+			Scanner c = new Scanner (System.in);
+			String name = c.nextLine();
+			Scanner p = new Scanner(System.in);
+			String password = p.nextLine();
+			
+			char a = password.charAt(8);
+			
+			System.out.println("Have a nice day! " + name);
+		}
+		catch(StringIndexOutOfBoundsException e) {
+			System.out.println("StringIndexOutOfBoundsException");
+		}
 		Scanner input = new Scanner(System.in);
 		DinosaurManager dm = new DinosaurManager(input);
 		int num = 8;
@@ -62,6 +70,7 @@ public class MenuManager {
 			}
 			else if (num == 8) {
 				System.out.println("Good bye.\n");
+				break;
 			}
 		}
 		
