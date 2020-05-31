@@ -1,9 +1,47 @@
 package assignment;
 
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+
+
+
 public class MenuManager {
+	public static void Buttons() {
+		JFrame frame = new JFrame("Menu");
+		JButton button1 = new JButton("Information of Dinosaurs");
+		JButton button2 = new JButton("Feed to dinosaur");
+		JButton button3 = new JButton("Make quarrel with anotehr dinasours");
+		JButton button4 = new JButton("Administer euthanasia dinosaur");
+		JButton button5 = new JButton("Make sleep dinosaur");
+		JButton button6 = new JButton("Raise dinosaurs");
+		JButton button7 = new JButton("Turn on/off fence");
+		JButton button8 = new JButton("Exit");
+		JLabel label1 = new JLabel("Select!!");
+		JPanel panel = new JPanel();
+		
+		frame.setSize(1200, 500);
+		frame.setLayout(new FlowLayout());
+		frame.add(button1);
+		frame.add(button2);
+		frame.add(button3);
+		frame.add(button4);
+		frame.add(button5);
+		frame.add(button6);
+		frame.add(button7);
+		
+		frame.add(new JButton("Exit"), BorderLayout.SOUTH);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+	 
 	public static void main(String[] args) {
 		System.out.println(" *** Jurassic Park Dinosaur management! *** ");
 		System.out.println("Input your ID");
@@ -20,6 +58,9 @@ public class MenuManager {
 		catch(StringIndexOutOfBoundsException e) {
 			System.out.println("StringIndexOutOfBoundsException");
 		}
+		
+		Buttons();
+		
 		Scanner input = new Scanner(System.in);
 		DinosaurManager dm = new DinosaurManager(input);
 		int num = 8;
